@@ -1,0 +1,9 @@
+\subsection{Throwing Using Sparse Reachable Map}\label{sec:sec:srm}
+
+A Sparse Reachable Map (SRM) is used to create a collision free trajectories while having the end-effector reach a desired velocity\cite{dlofaro-srm}.
+The SRM has been shown to be a viable method for trajectory generation for high degree of freedom, high-gain position controlled robots.  This remains true when operating without full knowledge of the reachable area as long as a good collision model of the robot is available. 
+The end-effector velocity (magnitude and direction) is specified as well as a duration of this velocity. 
+The SRM is created by making a sparse map of reachable end-effector positions in free space and the corresponding poses in joint space is created using random sampling in joint space and forward kinematics. 
+The desired trajectory in free space is placed within the sparse map with the first point of the trajectory being a known pose from the original sparse map. 
+The Jacobian Transpose Controller method of inverse kinematics is then used to find the subsequent points in the trajectory. 
+Each pose in the trajectory is checked against the collision model to guarantee no self-collisions. 
