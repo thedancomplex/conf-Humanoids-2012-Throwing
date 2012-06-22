@@ -56,5 +56,7 @@ The commanded trajectory produces the desired velocity of 4.9m/s at 60$^o$.  Thi
   \label{fig:3dThrowReal}
 \end{figure}
 
-This method worked as desired however in approximately 10\% of the tests a joint would over torque and shutdown.  This is due to the system not taking the robots power limitations into account. 
+To ensure balance throughout the motion the balance controller as described in Section~\ref{sec:sec:balance} was applied and the static ZMP criteria was checked for the entire trajectory.
+This method worked as desired however in approximately 10\% of the tests a joint would over torque and shutdown.  
+This is due to the system not taking the robots power limitations into account. 
 

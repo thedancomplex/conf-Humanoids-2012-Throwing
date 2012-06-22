@@ -1,0 +1,25 @@
+\section{Method Comparison}\label{sec:comparison}
+All three methods described were shown to be stable during the throwing motion and can successfully throw a ball.  Table~\ref{table:comp} shows the end-effector (EEF) velocity, joint failure rate and stability of the three different methods of end-effector velocity control used in this paper human-robot joint mapping (MoCap), SRM based and key-frame.
+
+\begin{table}[!t]
+%% increase table row spacing, adjust to taste
+\renewcommand{\arraystretch}{1.3}
+% if using array.sty, it might be a good idea to tweak the value of
+% \extrarowheight as needed to properly center the text within the cells
+\caption{Comparison between the three different methods of end-effector (EEF) velocity control: human-robot joint mapping (MoCap), SRM based and key-frame}
+\label{table:comp}
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+  				& EEF Velocity ($\frac{m}{s}$)					& Joint Failure (\%)			& Stable (y/n) 	\\
+\hline
+MoCap 		& 4.0																		& 0												& y 						\\
+\hline
+SRM 			& 4.9																		& 10											& y							\\
+\hline
+Key-Frame & 6.8 																	& 0 											&	y							\\
+\hline
+\end{tabular}
+\end{table}
+
+The SRM technique worked well however the high jerk on each of the joints (creating large torques) caused the motor controller to over torque and shutdown 10\% of the time.  The pitch needs to work 100\% of the time thus this method is not well suited for the experiment.  Both the human-robot joint mapping via MoCap and key-frame based methods consistantly worked and stayed stable.  A secondary objective is to have the throwing motion be overhand like a regular Major League Baseball pitcher.  Due to the constraints placed on the joint mapping of the MoCap method an over arm throw would be impossiable due to the robot's $\pm180^o$ joint limitations.  The key-frame method was chosen as the method to throw the ball.  Section~\ref{sec:finalDesign} discribes the modifications to the system to allow it to throw the pitch the desired distance.
