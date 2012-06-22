@@ -24,10 +24,19 @@ G(s) = \frac{\Theta(s)}{U(s)} = \frac{\frac{K}{mL^2}}{s^2+\frac{C}{mL^2}s + \fra
 Prior work on the model and controller for the Hubo by Cho et. al. calculated $K=753\frac{Nm}{rad}$ and $C=18\frac{Nm}{sec}$ using the free vibration response method\cite{5379574}.
 
 
-
-\begin{figure}[t]
+\begin{figure}[h]
   \centering
 \includegraphics[width=1.0\columnwidth]{./pix/blockDiagram.png}
   \caption{Hubo successfully throwing the first pitch at the second annual Philadelphia Science Festival event Science Night at the Ball Park on April 28th, 2012.  The game was between the Philadelphia Phillies and the Chicago Cubs and played at the Major League Baseball stadium Citizens Bank Park.  The Phillies won 5-2}
-  \label{fig:invPen}
+  \label{fig:ctrlBlockDiagram}
 \end{figure}
+
+The control law is as follows
+%ffFor the ankle roll (in the coronal plane) it is always assumed that the desired orientation of the COM is zero degrees.  Thus the roll of the IMU is taken as the error.
+
+\begin{equation}
+\theta_{n}^x = \theta_{t}^x + (K_p^x+sK_d^x)(\sum \theta_{t}^x - \theta_{c}^x)
+%\theta_{new} = \theta_{traj} + (K_p+sK_d)(\sum \theta_{leg} - \theta_{IMU})
+\end{equation}
+
+Where $\theta_t$ is the desired trajectory of the lower body (pitch or roll) and $x$ denotes pitch or roll.  $\theta_{c}$ is the orientation of the center of mass in the global frame.  $\theta_n$ is the resulting trajectory.  $K_p$ and $K_d$ are the proportional and derivative gains.  The resulting control allows for a stable stance event with perturbations from upper body motions.
