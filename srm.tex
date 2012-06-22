@@ -18,7 +18,7 @@ q_1 = q_0 + \dot{q}_0 = q_0 + kJ^Te|_{x_0}^{x_1}
 \end{equation}
 
 Where $q_0$ and $x_0$ is the current pose and corresponding end-effector position respectively.  $q_1$ is the next pose for the next desired end-effector position $x_1$.
-Each desired end-effector position $x$ must be within a euclidean distance $d$ from any point in the SRM.
+Each desired end-effector position $x$ must be within a euclidean distance $d$ (user defined) from any point in the SRM.
 
 \begin{equation}
 min \left(|x - SRM| \right) < d
