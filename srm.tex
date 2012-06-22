@@ -3,7 +3,7 @@
 A Sparse Reachable Map (SRM) is used to create a collision free trajectories while having the end-effector reach a desired velocity as discribed in Lofaro et. al.\cite{dlofaro-srm}.
 The SRM has been shown to be a viable method for trajectory generation for high degree of freedom, high-gain position controlled robots.  This remains true when operating without full knowledge of the reachable area as long as a good collision model of the robot is available. 
 The end-effector velocity (magnitude and direction) is specified as well as a duration of this velocity. 
-The SRM is created by making a sparse map of reachable end-effector positions in free space and the corresponding poses in joint space is created using random sampling in joint space and forward kinematics. 
+The SRM is created by making a sparse map of the reachable end-effector positions in free space and the corresponding poses in joint space by using random sampling in joint space and forward kinematics. 
 The desired trajectory in free space is placed within the sparse map with the first point of the trajectory being a known pose from the original sparse map. 
 
 \begin{equation}
@@ -11,7 +11,7 @@ L_d(0) \in SRM
 \end{equation}
 
 $L_d(0)$ is known both in joint space and in free space.
-The Jacobian Transpose Controller method of inverse kinematics as described by Wolovich et al.\cite{4048118} is then used to find the subsequent points in the trajectory. 
+The Jacobian Transpose Controller method of inverse kinematics as described by Wolovich et al.\cite{4048118} is then used to find the subsequent joint space values for the free space points in the trajectory. 
 
 \begin{equation}
 q_1 = q_0 + \dot{q}_0 = q_0 + kJ^Te|_{x_0}^{x_1}
@@ -57,6 +57,7 @@ The commanded trajectory produces the desired velocity of 4.9m/s at 60$^o$.  Thi
 \end{figure}
 
 To ensure balance throughout the motion the balance controller as described in Section~\ref{sec:sec:balance} was applied and the static ZMP criteria was checked for the entire trajectory.
-This method worked as desired however in approximately 10\% of the tests a joint would over torque and shutdown.  
+This method worked as desired.  
+In approximately 10\% of the tests one or more joints would over torque and shutdown.  
 This is due to the system not taking the robots power limitations into account. 
 

@@ -2,8 +2,8 @@
 
 The final goal is the have an end-effector velocity of $9.47\frac{m}{s}$ at $45^o$.  
 The key-frame method was tested to throw at $4.8\frac{m}{s}$.  
-To increase the end-effector velocity the upper body motion was kept the same but the lower body stepped up, pushed forward with the right foot and stepped forward 10cm with the left.  
-Stepping with your non-dominant foot when throwing overhand is common practice to increase the distance you can throw the ball.  
+To increase the end-effector velocity the upper body motion was kept unchanged but the lower body added a stepped up with the left foot, pushed forward with the right foot and stepped forward 10cm with the left.  
+Stepping with your non-dominant foot, and pushing with your dominant, when throwing overhand is common practice to increase the distance you can throw a ball.  
 Jaemi Hubo throws with its right hand and steps with its left.  
 This increased the end-effector velocity from $4.8\frac{m}{s}$ to $7.1\frac{m}{s}$.
 Fig.~\ref{fig:hubo-step} shows the stepping motion of the robot.
@@ -15,11 +15,11 @@ Fig.~\ref{fig:hubo-step} shows the stepping motion of the robot.
   \label{fig:hubo-step}
 \end{figure}
 
-The addition of the pushing off with the right foot and stepping forward introduced two problems.  1) The ZMP criteria is not satisfied throughout the motion and 2) the right foot would slip when pushing its body forward.  
+The addition of pushing off with the right foot and stepping forward introduced two problems.  1) The ZMP criteria is not satisfied throughout the motion and 2) the right foot would slip when pushing its body forward.  
 To remedy this hook and loop was paced on the bottom of the right foot and on the platform where Hubo would throw from.  
 This did not permanently attach the robot to the platform but it did allow for more friction between the foot and the ground.
-This allowed the balancing controller to function adequately for the short step.
-The platform was added to ensure more consistent ground for the robot to balance on.
+This allowed the balancing controller to function adequately for the short step and maintain stability.
+The platform was added to ensure a more consistent ground for the robot to balance on than the baseball field can inherently provide.
 
 \begin{figure}[t]
   \centering
@@ -32,9 +32,9 @@ The platform was added to ensure more consistent ground for the robot to balance
 
 An additional $2.5\frac{m}{s}$ was needed to give a proper throw.  
 Borrowing from the GRASP Lab and their high powered pneumatic wrist on their PhillieBot, a spring loaded mechanism was added to Hubo's wrist, see Fig.~\ref{fig:hubo-spring}.
-The addition of this mechanism allowed the robot to achieve an end-effector velocity of $10\frac{m}{s}$.
+The addition of this mechanism allowed the robot to achieve an end-effector velocity magnitude of $10\frac{m}{s}$.
 Fig.~\ref{fig:hubo-throw-test} shows a frame overlay of the the Hubo throwing a regulation baseball 10m (32.8feet).
-Fig.~\ref{fig:hubo-throw} shows the same throw at Citizens Bank Park on April $28^th$, 2012.
+Fig.~\ref{fig:hubo-throw} shows the same throw at Citizens Bank Park on April $28^{th}$, 2012.
 
 
 \begin{figure*}[t]

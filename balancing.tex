@@ -1,5 +1,5 @@
-\subsection{Balancing}\label{sec:sec:balance}
-Each of the methods used have to be stable through the motion in order for the system not to fall down.  The well known zero-moment-point (ZMP) criteria is what each method must adhere to in order to stay statically stable\cite{Vukobratovic19721}.  To handle perturbation an active balance controller was added.  The active balance controller is applied on top of the pre-defined trajectories.  The Hubo is modeled as a single inverted pendulum with the center of mass (COM) located at length $L$ from the ankle.  The compliance of the robot is composed of a spring $K$ and a damper $C$, see Fig.~\ref{fig:invPen}.  An IMU located at the COM gives the measured orientation.
+\subsection{Balance and Stability}\label{sec:sec:balance}
+Each of the methods used have to be stable through the motion in order for the system to be stable (i.e. not to fall down).  The well known zero-moment-point (ZMP) criteria is what each method must adhere to in order to stay statically stable\cite{Vukobratovic19721}.  To handle perturbation an active balance controller was added.  The active balance controller is applied on top of the pre-defined trajectories.  The Hubo is modeled as a single inverted pendulum with the center of mass (COM) located at length $L$ from the ankle.  The compliance of the robot is composed of a spring $K$ and a damper $C$, see Fig.~\ref{fig:invPen}.  An IMU located at the COM gives the measured orientation.
 
 \begin{figure}[t]
   \centering
@@ -14,7 +14,7 @@ The dynamic equation of the simplified model is assumed to be the same in both t
 mL^2\ddot{\theta}+C\dot{\theta}-K\theta = Ku
 \end{equation}
 
-This can be linearized and made into a transfer function.
+This can be linearized and made into the transfer function:
 
 \begin{equation}
 %G(s) = \frac{\Theta(s)}{U(s)} = \frac{K}{ mL^2s^2 + Cs + (K - mgL)}
@@ -35,8 +35,9 @@ The control law is as follows
 %ffFor the ankle roll (in the coronal plane) it is always assumed that the desired orientation of the COM is zero degrees.  Thus the roll of the IMU is taken as the error.
 
 \begin{equation}
-\theta_{n}^x = \theta_{t}^x + (K_p^x+sK_d^x)(\sum \theta_{t}^x - \theta_{c}^x)
+\theta_{n}^x = \theta_{t}^x + \left(K_p^x+sK_d^x\right)\left(\sum \theta_{t}^x - \theta_{c}^x\right)
+%\theta_{n}^x = \theta_{t}^x + (K_p^x+sK_d^x)(\sum \theta_{t}^x - \theta_{c}^x)
 %\theta_{new} = \theta_{traj} + (K_p+sK_d)(\sum \theta_{leg} - \theta_{IMU})
 \end{equation}
 
-Where $\theta_t$ is the desired trajectory of the lower body (pitch or roll) and $x$ denotes pitch or roll.  $\theta_{c}$ is the orientation of the center of mass in the global frame.  $\theta_n$ is the resulting trajectory.  $K_p$ and $K_d$ are the proportional and derivative gains.  The resulting control allows for a stable stance event with perturbations from upper body motions.
+Where $\theta_t$ is the desired trajectory of the lower body (pitch or roll) and $x$ denotes pitch or roll.  $\theta_{c}$ is the orientation of the center of mass in the global frame.  $\theta_n$ is the resulting trajectory.  $K_p$ and $K_d$ are the proportional and derivative gains.  The resulting control allows for a stable stance even with perturbations from upper body motions.
