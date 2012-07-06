@@ -1,10 +1,10 @@
 \subsection{Key-Frame Motion}\label{sec:sec:keyframe}
 
-Key-frame motion profiles for humanoid robots borrows from the animation industries' long used animation techniques.  
-When making an animation the master animator will create the character in the most important (or key) poses.  
-The apprentice animators will draw all of the frames between the key poses.  
+Key-frame motion profiles for humanoid robots borrows from the animation industries' long used techniques.  
+When making an animation the master artist/cartoonist will create the character in the most important (or key) poses.  
+The apprentice will draw all of the frames between the key poses.  
 We borrowed this technique when we: posed the robot in the desired pose, record the values in joint space, and make a smooth motion between poses.  
-In place of the apprentice animators, forth order interpolation methods were used to make smooth trajectories between poses.  
+In place of the apprentice, forth order interpolation methods were used to make smooth trajectories between poses.  
 Forth order interpolation was used in order to limit the jerk on each of the joints.  
 The resulting trajectory is a smooth well defined motion as seen in Fig.~\ref{fig:keyframe-throw}.
 
@@ -15,11 +15,10 @@ The resulting trajectory is a smooth well defined motion as seen in Fig.~\ref{fi
   \label{fig:keyframe-throw}
 \end{figure}
 
-To ensure balance throughout the motion the balance controller as described in Section~\ref{sec:sec:balance} was applied and the static ZMP criteria was checked for the entire trajectory.
+To ensure stability throughout the motion the balance controller as described in Section~\ref{sec:sec:balance} was applied and the static ZMP criteria was checked for the entire trajectory.
 The resulting end effector velocity was $4.8\frac{m}{s}$ at the release point.  
 Fig.~\ref{fig:keyframe-graph} shows the plot of the magnitude of the end effector's velocity.  
-The release point is marked.  
-It should be noted that the release point has the velocity vector at an elevation of $40^o$ from the ground.
+It should be noted that at the instance of release the velocity vector is at an elevation of $40^o$ from the ground.
 
 \begin{figure}[t]
   \centering

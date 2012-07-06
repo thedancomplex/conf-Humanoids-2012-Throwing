@@ -1,9 +1,15 @@
 \subsection{Balance and Stability}\label{sec:sec:balance}
-Each of the methods used have to be stable through the motion in order for the system to be stable (i.e. not to fall down).  The well known zero-moment-point (ZMP) criteria is what each method must adhere to in order to stay statically stable\cite{Vukobratovic19721}.  To handle perturbation an active balance controller was added.  The active balance controller is applied on top of the pre-defined trajectories.  The Hubo is modeled as a single inverted pendulum with the center of mass (COM) located at length $L$ from the ankle.  The compliance of the robot is composed of a spring $K$ and a damper $C$, see Fig.~\ref{fig:invPen}.  An IMU located at the COM gives the measured orientation.
+Each of the methods used have to be stable through the motion in order for the system to be stable (i.e. not to fall down).  
+The well known zero-moment-point (ZMP) criteria is what each method must adhere to in order to stay statically stable\cite{Vukobratovic19721}.  
+To handle perturbation an active balance controller was added.  
+The active balance controller is applied on top of the pre-defined trajectories.  
+Hubo is modeled as a single inverted pendulum with the center of mass (COM) located at length $L$ from the ankle.  
+The compliance of the robot is composed of a spring $K$ and a damper $C$, see Fig.~\ref{fig:invPen}.  
+An IMU located at the COM gives the measured orientation.
 
 \begin{figure}[t]
   \centering
-\includegraphics[width=1.0\columnwidth]{./pix/invPen.png}
+\includegraphics[width=1.0\columnwidth]{./pix/invPen3.pdf}
   \caption{Hubo modeled as a single inverted pendulum with COM located a distance $L$ from }
   \label{fig:invPen}
 \end{figure}

@@ -1,5 +1,5 @@
 \section{Method Comparison}\label{sec:comparison}
-All three methods described were shown to be stable during the throwing motion and can successfully throw a baseball.  Table~\ref{table:comp} shows the end-effector (EEF) velocity, joint failure rate, overhand or underhand throwing and stability of the three different methods of end-effector velocity control used in this paper human-robot joint mapping (MoCap), SRM based and key-frame.
+All three methods described are stable during the throwing motion and can successfully throw a baseball.  Table~\ref{table:comp} shows the end-effector (EEF) velocity, joint failure rate, overhand or underhand throwing and stability of the three different methods of end-effector velocity control used in this paper human-robot joint mapping (MoCap), SRM based and key-frame.
 
 \begin{table}[!t]
 %% increase table row spacing, adjust to taste
@@ -26,4 +26,4 @@ Key-Frame & 4.8 																	& 0 								& y								&	y							\\
 The SRM technique worked well however the large jerk on each of the joints created large torques caused the motor controller to over torque/current and shutdown 10\% of the time.  
 The pitch needs to work 100\% of the time thus this method is not well suited for the event.  
 Both the human-robot joint mapping via MoCap and key-frame based methods consistently worked and stayed stable.  A secondary objective is to have the throwing motion be overhand like a standard Major League Baseball pitcher.  
-Due to the constraints placed on the joint mapping of the MoCap method in Section~\ref{sec:sec:mocap} an over arm throw would be impossible to preform due to the robot's $\pm180^o$ joint limitations.  The key-frame method was chosen as the method to throw the ball.  Section~\ref{sec:finalDesign} discribes the modifications to the system to allow it to reliably throw the pitch the desired distance.
+Due to the constraints placed on the joint mapping of the MoCap method in Section~\ref{sec:sec:mocap} an over arm throw would be impossible to preform due to the robot's $\pm180^o$ joint limitations.  The key-frame method was chosen as the method to throw the ball.  Section~\ref{sec:finalDesign} describes the modifications to the system to allow it to reliably throw the pitch the desired distance.
