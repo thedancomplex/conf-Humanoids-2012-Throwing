@@ -9,7 +9,7 @@ An IMU located at the COM gives the measured orientation.
 
 \begin{figure}[t]
   \centering
-\includegraphics[width=1.0\columnwidth]{./pix/invPen3.pdf}
+\includegraphics[width=0.6\columnwidth]{./pix/invPen3.pdf}
   \caption{Hubo modeled as a single inverted pendulum with COM located a distance $L$ from }
   \label{fig:invPen}
 \end{figure}
@@ -32,8 +32,8 @@ Prior work on the model and controller for the Hubo by Cho et. al. calculated $K
 
 \begin{figure}[ht]
   \centering
-\includegraphics[width=1.0\columnwidth]{./pix/blockDiagram.png}
-  \caption{Hubo successfully throwing the first pitch at the second annual Philadelphia Science Festival event Science Night at the Ball Park on April 28th, 2012.  The game was between the Philadelphia Phillies and the Chicago Cubs and played at the Major League Baseball stadium Citizens Bank Park.  The Phillies won 5-2}
+\includegraphics[width=1.0\columnwidth]{./pix/blockDiagram3.pdf}
+  \caption{Block diagram of the balance controller used to balance Hubo in this work.}
   \label{fig:ctrlBlockDiagram}
 \end{figure}
 
@@ -41,9 +41,10 @@ The control law is as follows
 %ffFor the ankle roll (in the coronal plane) it is always assumed that the desired orientation of the COM is zero degrees.  Thus the roll of the IMU is taken as the error.
 
 \begin{equation}
-\theta_{n}^x = \theta_{t}^x + \left(K_p^x+sK_d^x\right)\left(\sum \theta_{t}^x - \theta_{c}^x\right)
+\theta_n^{x_a} = \theta_t^{x_a} + \left(K_p^x+sK_d^x\right)\left(\sum\limits_{x \in t} \theta_{t}^x - \theta_{c}^x\right)
+%\theta_{n}^x = \theta_{t}^x + \left(K_p^x+sK_d^x\right)\left(\sum \theta_{t}^x - \theta_{c}^x\right)
 %\theta_{n}^x = \theta_{t}^x + (K_p^x+sK_d^x)(\sum \theta_{t}^x - \theta_{c}^x)
 %\theta_{new} = \theta_{traj} + (K_p+sK_d)(\sum \theta_{leg} - \theta_{IMU})
 \end{equation}
 
-Where $\theta_t$ is the desired trajectory of the lower body (pitch or roll) and $x$ denotes pitch or roll.  $\theta_{c}$ is the orientation of the center of mass in the global frame.  $\theta_n$ is the resulting trajectory.  $K_p$ and $K_d$ are the proportional and derivative gains.  The resulting control allows for a stable stance even with perturbations from upper body motions.
+Where $\theta_t$ is the desired trajectory of the lower body (pitch or roll), $x$ denotes pitch or roll and $x_a$ denotes pitch or roll on the ankle.  $\theta_{c}$ is the orientation of the center of mass in the global frame.  $\theta_n$ is the resulting trajectory.  $K_p$ and $K_d$ are the proportional and derivative gains.  The resulting control allows for a stable stance even with perturbations from upper body motions.
