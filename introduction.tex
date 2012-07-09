@@ -1,25 +1,25 @@
 \section{Introduction}
 % no \IEEEPARstart
-In early February 2012 the director of the Philadelphia Science Festival asked the Drexel Autonomous Systems Lab (DASL)\footnote{Drexel Autonomous Systems Lab: http://dasl.mem.drexel.edu}\label{foot:dasl} if they could have their full-size humanoid robot Jaemi Hubo throw the ceremonial first pitch at the second annual \textit{Science Night at the Ballpark}.  
+In early February 2012 the director of the Philadelphia Science Festival asked the Drexel Autonomous Systems Lab (DASL)\footnote{Drexel Autonomous Systems Lab: http://dasl.mem.drexel.edu}\label{foot:dasl} if they could have their full-size humanoid Jaemi Hubo throw the ceremonial first pitch at the second annual \textit{Science Night at the Ballpark}.  
 On April 28th, 2012 Hubo successfully threw the first pitch at the Philadelphia Phillies vs. Chicago Cubs game, see Fig.~\ref{fig:hubo-throw}.  
 
 \begin{figure}[t]
   \centering
 \includegraphics[width=1.0\columnwidth]{./pix/hubo-pitch.png}
-  \caption{Hubo successfully throwing the first pitch at the second annual Philadelphia Science Festival event Science Night at the Ball Park on April 28th, 2012.  The game was between the Philadelphia Phillies and the Chicago Cubs and played at the Major League Baseball stadium Citizens Bank Park.  The Phillies won 5-2}
+  \caption{Hubo successfully throwing the first pitch at the second annual Philadelphia Science Festival event Science Night at the Ball Park on April 28th, 2012.  The game was between the Philadelphia Phillies and the Chicago Cubs and played at the Major League Baseball stadium Citizens Bank Park.  The Phillies won 5-2.  Video of the pitch can be found at http://danlofaro.com/Humanoids2012/\#pitch}
   \label{fig:hubo-throw}
 \end{figure}
 
 
 %The PhillieBot\footnote{PhillieBot Video: http://youtu.be/ShId-vZ-ZEY} made by the GRASP Lab at the University of Pennsylvania was the robot that threw the first pitch at the first annual Philadelphia Science Festival \textit{Science Night at the Ballpark} in 2011.  
 
-Hubo was the first full-size humanoid robot to throw the inaugural pitch at a Major League Baseball game.  
+Hubo was the first full-size humanoid to throw the inaugural pitch at a Major League Baseball game.  
 This task poses challenges in the area of fully-body locomotion, coordination and stabilization that must be addressed.
-This document describes how the latter was done via the analyses/tests of three different approaches and the resulting final design.
+This paper describes how the latter was done via the analyses/tests of three different approaches and the resulting final design.
 Section~\ref{sec:background} gives a brief introduction to work already done in the field as well as states the requirements for the pitch.
 Section~\ref{sec:methodology} describes the three different methods tested where:
 Section~\ref{sec:sec:balance} discusses the balancing methods and criteria used.
-Section~\ref{sec:sec:mocap} describes the human-robot kinematic mapping approach that uses a motion capture system to capture a human's throwing motion then mapping that to a full-size humanoid robot.  
+Section~\ref{sec:sec:mocap} describes the human-robot kinematic mapping approach that uses a motion capture system to capture a human's throwing motion then mapping that to a full-size humanoid.  
 Section~\ref{sec:sec:srm} describes a fully automated approach that uses the sparse reachable map (SRM) to provide viable full body throwing trajectories with the desired end effector velocity\cite{dlofaro-srm}.
 Section~\ref{sec:sec:keyframe} describes the final method explored which is based on key-frame trajectories.
 Section~\ref{sec:comparison} compares the tests and analyses of each of the methods.

@@ -23,4 +23,7 @@ A = [A(1:366);A(367:L).*t];
 plot((1:length(A))*T,A,'LineWidth',3);
 grid on
 axis([0 5.3, 0, 5]) 
+xlabel('Time (sec)', 'fontsize',16)
+ylabel('Velocity (m/s)', 'fontsize',16)
+
 shg

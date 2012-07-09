@@ -1,11 +1,11 @@
-\subsection{Human to Humanoid Robot Kinematic Mapping}\label{sec:sec:mocap}
+\subsection{Human to Humanoid Kinematic Mapping}\label{sec:sec:mocap}
 
 Motion capture (MoCap) systems are commonly used to record high degree of freedom human motion.  
 Athletic trainers in baseball, football and cycling use motion capture to analyze and improve throwing and lower limb motions\cite{Fleisig1996,barrentiine1998,Mochizuki1998,Akira1999}.
-MoCap systems are also used to generate human-like motions and map those motion to humanoid robots\cite{1545060,Polland2002}.  
+MoCap systems are also used to generate human-like motions and map those motion to humanoids\cite{1545060,Polland2002}.  
 Fig.~\ref{fig:mocap-joints} shows the Hubo's kinematic structure (left) and the human (MoCap) kinematic structure(left).
-The human has 3-DOF at each joint while the humanoid robot has limited DOF at each corresponding joint.
-Some of the challenges in mapping between the human kinematic structure (from MoCap) to a humanoid robot's kinematic structure are:
+The human has 3-DOF at each joint while the humanoid has limited DOF at each corresponding joint.
+Some of the challenges in mapping between the human kinematic structure (from MoCap) to a humanoid's kinematic structure are:
 
 \begin{itemize}
 	\item The difference in the total degree of freedom (DOF). 
@@ -13,7 +13,7 @@ Some of the challenges in mapping between the human kinematic structure (from Mo
 	\item	The different Kinematic constraints.
 \end{itemize}
 
-Stefan et. al.\cite{5756898} uses an intermediate model (Master Motor Map) to decouple motion capture data for further post-processing tasks. 
+Gaertner et. al.\cite{5756898} uses an intermediate model (Master Motor Map) to decouple motion capture data for further post-processing tasks. 
 Our approach is to: 
 a) Chose a set MoCap model.  
 b) Preform motions where the pitch motions are decoupled (roll and yaw stays constant), avoids singularities and robot joint position limitations.  
@@ -53,8 +53,8 @@ Fig.~\ref{fig:mocap-underhand} shows the human throwing the ball and the robot t
 \end{figure}
 
 To ensure balance throughout the motion the balance controller as described in Section~\ref{sec:sec:balance} was applied and the static ZMP criteria was checked for the entire trajectory.
-The human subject threw the ball approximately eight feet (244cm).  
-The mapping of the latter motion caused the robot to throw the ball approximately five feet (152cm).
+The human subject threw the ball approximately eight feet (244 cm).  
+The mapping of the latter motion caused the robot to throw the ball approximately five feet (152 cm).
 The discrepancy comes from the proportional difference in limb length from the human to the robot.
 A side by side video of the human and the robot throwing the ball is available for viewing on the this papers's homepage\footnote{MoCap to Robot (Video): http://danlofaro.com/Humanoids2012/\#mocap}.
 
