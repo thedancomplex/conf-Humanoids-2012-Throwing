@@ -1,6 +1,6 @@
 \subsection{Throwing Using Sparse Reachable Map}\label{sec:sec:srm}
 
-A Sparse Reachable Map (SRM) is used to create a collision free trajectories while having the end-effector reach a desired velocity as discribed in Lofaro et. al.\cite{dlofaro-srm}.
+A Sparse Reachable Map (SRM) is used to create a collision free trajectories while having the end-effector reach a desired velocity as described in Lofaro et. al.\cite{dlofaro-srm}.
 The SRM has been shown to be a viable method for trajectory generation for high degree of freedom, high-gain position controlled robots.  This remains true when operating without full knowledge of the reachable area as long as a good collision model of the robot is available. 
 The end-effector velocity (magnitude and direction) is specified as well as a duration of this velocity. 
 The SRM is created by making a sparse map of the reachable end-effector positions in free space and the corresponding poses in joint space by using random sampling in joint space and forward kinematics. 
@@ -31,7 +31,7 @@ Each pose in the trajectory is checked against the collision model to guarantee 
 \begin{figure}[ht]
   \centering
 %\includegraphics[width=0.5\columnwidth]{./pictures/hubo1s.png}\includegraphics[width=0.5\columnwidth]{./pictures/hubo2s.png}
-\includegraphics[width=0.5\columnwidth]{./pix/hCol.png}\includegraphics[width=0.5\columnwidth]{./pix/hBody.png}
+\includegraphics[width=0.4\columnwidth]{./pix/hCol.png}\includegraphics[width=0.4\columnwidth]{./pix/hBody.png}
   \caption{OpenHUBO - OpenRAVE model of Hubo KHR-4.  Left: Collision Geometry.  Right: Model with protective shells\cite{dlofaro-srm}.  }
   \label{fig:vHubo}
 \end{figure}
